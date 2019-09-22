@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Demo BonnusV3</string>
+    <string name="initialize_button_text">Initialize</string>
+    <string name="moment_text_button">Moment</string>
+    <string name="rewards_text_button">Rewards</string>
+</resources>
