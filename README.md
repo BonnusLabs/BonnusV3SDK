@@ -38,7 +38,7 @@ _requestInitialize Parameters:_
   - birthDate, zipCode, gender, geo, email, name, lastName, city, state <br />
 
   ```java
-  Dictionary<String, String> dictionary = new Hashtable<>();
+  Dictionary<String, String> dataDictionary = new Hashtable<>();
           dictionary.put("name","John");
           dictionary.put("lastName","Doe");
   ```
