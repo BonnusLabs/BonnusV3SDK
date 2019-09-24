@@ -10,7 +10,7 @@ implementation 'mx.bonnusv3.bonnuslabs:bonnussdk:1.0.1'
 ## INITIALIZE THE SDK
 
 The initialize method of the SDK starts the flow of the API. <br/><br/>
-_Warning: this method must be called only once an not every app session, to check if the method should be called, refer to __getUserId__ instructions_
+_Warning: this method must be called only once and not in every app session, to check if the method should be called, refer to __getUserId__ instructions_
 
 ```java
   Bonnus.getInstance().requestInitialize(
@@ -51,7 +51,7 @@ _requestInitialize Parameters:_
 
 ## GET EXISTING USER ID FROM LOCAL
 
-When the API is initialized using the SDK an user is created in Bonnus V3, this endpoint will retrieve the userId that indicates that the  SDK has been initialized, if its null or empty the SDK has not been initialized.
+When the API is initialized using the SDK an user is created in Bonnus V3 and saved localy in the SDK, this method will retrieve the userId that indicates that the  SDK has been initialized, if its null or empty the SDK has not been initialized.
 
 ```java
   String value = Bonnus.getInstance().getUserId(context);
