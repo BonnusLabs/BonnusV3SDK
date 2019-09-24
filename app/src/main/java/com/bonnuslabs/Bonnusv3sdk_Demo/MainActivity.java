@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         Bonnus.getInstance().requestInitialize(
                 "000006",
-                null,
+                dictionary,
                 ACCESS_TOKEN,
                 MainActivity.this,
                 true,
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     private void bonnusRewards(){
         progressBar.setVisibility(View.VISIBLE);
 
-        Bonnus.getInstance().requestRewards(true, MainActivity.this, new Bonnus.OnBonnusSdkListResponse() {
+        Bonnus.getInstance().requestRewards(false, MainActivity.this, new Bonnus.OnBonnusSdkListResponse() {
             @Override
             public void listResponse(Object value, String responseMessage) {
                 progressBar.setVisibility(View.GONE);
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra(URL_TO_LOAD,value.toString());
                     startActivity(intent);
                 } else if(value instanceof ArrayList){
-                    Toast.makeText(MainActivity.this, "List of Rewards as JSON", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "List of Rewards as List", Toast.LENGTH_SHORT).show();
                 }
             }
         });
