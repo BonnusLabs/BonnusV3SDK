@@ -51,7 +51,7 @@ _requestInitialize Parameters:_
 
 ## GET EXISTING USER ID FROM LOCAL
 
-When the API is initialized using the SDK an user is created in Bonnus V3 and saved localy in the SDK, this method will retrieve the userId that indicates that the  SDK has been initialized, if its null or empty the SDK has not been initialized.
+When the API is initialized using the SDK an user is created in Bonnus V3 and saved locally in the SDK, this method will retrieve the userId that indicates that the SDK has been initialized, if its null or empty the SDK has not been initialized.
 
 ```java
   String value = Bonnus.getInstance().getUserId(context);
@@ -65,7 +65,7 @@ When the API is initialized using the SDK an user is created in Bonnus V3 and sa
 
 ## SEND A TRIGGERED MOMENT TO API FROM SDK
 
-Moments are triggered and sent to the API using the SDK, if the user has won a reward the response value will be the URL Path to feed a Native Webview, oherwise value will be empty but has be counted, the Web Application loadede in the WebView and will manage the reward flow for the user.
+Moments are triggered and sent to the API using the SDK, if the user has won a reward the response value will be the URL Path to feed a Native Webview, oherwise this value will be empty but has be counted. The Web Application should be loaded in a WebView tha will manage the reward flow for the user.
 
 ```java
 Bonnus.getInstance().sendMoment(
@@ -88,12 +88,12 @@ _sendMoment Parameters:_
 __- momentTag:__ the tag configured for the moment to be rewarded<br />
 __- context:__ View or LifeCycle Context<br />
 __- momentResponse:__ the response every time a moment is triggered<br />
-  - value has the Url of the Web Application, if it is empty, the reward was not earned yet but counted as trigger<br />
+  - value has the Url of the Web Application, if it is empty, the reward was not earned yet, but counted as trigger<br />
 
 
 ## FETCH THE USER REWARDS
 
-Rewards a user has earned could be fetched as a URL web Path to load in a Webview or a Java Object list for intern Handling.
+List of Rewards a user has earned could be fetched as a URL web Path to load in a Webview or a Java Object list for intern Handling.
 
 ```java
 Bonnus.getInstance().requestRewards(asUrl, context, new Bonnus.OnBonnusSdkListResponse() {
